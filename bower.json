@@ -10,7 +10,10 @@
   ],
   "dependencies": {
     "jquery": "1.*",
-    "bootstrap": "3.*"
+    "bootstrap": "3.*",
+    "backbone": null,
+    "underscore": null,
+    "requirejs": null
   },
   "license": "MIT",
   "main": "../app.js"
