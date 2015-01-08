@@ -16,7 +16,10 @@
       "gulp-uglify": "*",
       "gulp-rename": "*",
       "gulp-concat": "*",
-    "jade": "~1.6.0"
+      "jade": "~1.6.0",
+      "gulp-cache": "*",
+      "gulp-livereload": "*",
+      "del": "*"
     },
   "repository": {
     "type": "git",
