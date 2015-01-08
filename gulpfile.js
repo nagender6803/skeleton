@@ -18,53 +18,53 @@ var gulp = require('gulp'),
  
 // Styles
 gulp.task('styles', function () {
-  gulp.src('src/styles/bootstrap.less')
+  gulp.src('app/src/styles/bootstrap.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
-    .pipe(gulp.dest('dist/styles/'))
+    .pipe(gulp.dest('app/dist/styles/'))
     .pipe(minifycss({keepBreaks:true}))
-    .pipe(gulp.dest('dist/styles/minify'));
+    .pipe(gulp.dest('app/dist/styles/minify'));
 });
 
 // CSS Styles
 gulp.task('cssstyles', function () {
-  gulp.src('src/styles/*.css')
-    .pipe(gulp.dest('dist/styles/'))
+  gulp.src('app/src/styles/*.css')
+    .pipe(gulp.dest('app/dist/styles/'))
     .pipe(minifycss({keepBreaks:true}))
-    .pipe(gulp.dest('dist/styles/minify'));
+    .pipe(gulp.dest('app/dist/styles/minify'));
 });
  
 // Scripts
 gulp.task('scripts', function() {
-  return gulp.src('src/scripts/js/*.js')
+  return gulp.src('app/src/scripts/js/*.js')
     .pipe(uglify({mangle : false}))
-    .pipe(gulp.dest('dist/scripts/minify'));
+    .pipe(gulp.dest('app/dist/scripts/minify'));
 });
 
 // Libs
 gulp.task('libs', function() {
-  return gulp.src('src/scripts/lib/*.js')
+  return gulp.src('app/src/scripts/lib/*.js')
     .pipe(uglify({mangle : false}))
-    .pipe(gulp.dest('dist/scripts/lib'));
+    .pipe(gulp.dest('app/dist/scripts/lib'));
 });
 
 // Helpers
 gulp.task('helpers', function() {
-  return gulp.src('src/scripts/helpers/*.js')
+  return gulp.src('app/src/scripts/helpers/*.js')
     .pipe(uglify({mangle : false}))
-    .pipe(gulp.dest('dist/scripts/helpers'));
+    .pipe(gulp.dest('app/dist/scripts/helpers'));
 });
 
 // Templates
 gulp.task('templates', function() {
-  return gulp.src('src/templates/*.html')
-    .pipe(gulp.dest('dist/templates'));
+  return gulp.src('app/src/templates/*.html')
+    .pipe(gulp.dest('app/dist/templates'));
 });
   
 // Clean
 gulp.task('clean', function(cb) {
-    del(['dist/assets/css', 'dist/assets/js', 'dist/assets/img'], cb)
+    del(['app/dist/assets/css', 'app/dist/assets/js', 'app/dist/assets/img'], cb)
 });
  
 // Default task
@@ -76,20 +76,20 @@ gulp.task('default', ['clean'], function() {
 gulp.task('watch', function() {
  
   // Watch .scss files
-  gulp.watch('src/styles/**/*.scss', ['styles']);
+  gulp.watch('app/src/styles/**/*.scss', ['styles']);
  
   // Watch .js files
-  gulp.watch('src/scripts/js/*.js', ['scripts']);
-  gulp.watch('src/scripts/js/*.js', ['libs']);
-  gulp.watch('src/scripts/js/*.js', ['helpers']);
+  gulp.watch('app/src/scripts/js/*.js', ['scripts']);
+  gulp.watch('app/src/scripts/js/*.js', ['libs']);
+  gulp.watch('app/src/scripts/js/*.js', ['helpers']);
  
   // Watch image files
-  gulp.watch('src/images/**/*', ['images']);
+  gulp.watch('app/src/images/**/*', ['images']);
  
   // Create LiveReload server
   livereload.listen();
  
   // Watch any files in dist/, reload on change
-  gulp.watch(['dist/**']).on('change', livereload.changed);
+  gulp.watch(['app/dist/**']).on('change', livereload.changed);
  
 });

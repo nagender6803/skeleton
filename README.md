@@ -1,2 +1,1 @@
-# skeleton
-Structure
+Skeleton Project Structure
