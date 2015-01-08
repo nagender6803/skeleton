@@ -1,0 +1,17 @@
+{
+  "name": "MyBowerApp",
+  "version": "1.0.0",
+  "description": "testing",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Nagender"
+  ],
+  "dependencies": {
+    "jquery": "1.*",
+    "bootstrap": "3.*"
+  },
+  "license": "MIT",
+  "main": "../app.js"
+}
