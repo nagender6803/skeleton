@@ -13,7 +13,8 @@
     "bootstrap": "3.*",
     "backbone": null,
     "underscore": null,
-    "requirejs": null
+    "requirejs": null,
+    "text": null
   },
   "license": "MIT",
   "main": "../app.js"
